@@ -1,0 +1,516 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Italianno&family=Monsieur+La+Doulaise&family=Mrs+Saint+Delafield&family=Pinyon+Script&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+.calligraphy {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
+}
+
+.calligraphy-pinyon {
+  font-family: "Pinyon Script", cursive;
+}
+
+.calligraphy-great {
+  font-family: "Great Vibes", cursive;
+}
+
+.calligraphy-allura {
+  font-family: "Allura", cursive;
+}
+
+.calligraphy-italianno {
+  font-family: "Italianno", cursive;
+}
+
+.calligraphy-delafield {
+  font-family: "Mrs Saint Delafield", cursive;
+}
+:root {
+  /* LIGHT MODE */
+  --bg-color: #f7f7fb;
+  --text-color: #111111;
+
+  --purple: #8b5cf6;
+  --blue: #06b6d4;
+  --pink: #ec4899;
+}
+
+html[dark-theme="dark"] {
+  /* DARK MODE */
+  --bg-color: #08080c;
+  --text-color: #ffffff;
+
+  --purple: #a78bfa;
+  --blue: #22d3ee;
+  --pink: #f472b6;
+}
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+}
+.download {
+  background-color: #111827;
+}
+.icons .download {
+  background-color: #111827;
+  color: white;
+}
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: var(--bg-color);
+
+  color: var(--text-color);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.gradient {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  opacity: 0.15;
+
+  animation: softMove 12s ease-in-out infinite;
+}
+
+.gradient-1 {
+  background: #8b5cf6;
+
+  top: -200px;
+  left: -150px;
+}
+
+.gradient-2 {
+  background: #06b6d4;
+
+  right: -200px;
+  bottom: -200px;
+
+  animation-delay: -6s;
+}
+
+@keyframes softMove {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(30px, -30px);
+  }
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =========================================
+   SMALL LABEL
+========================================= */
+
+.hero-label {
+  margin: 0 0 20px;
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  font-weight: 500;
+
+  opacity: 0.45;
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hero-title-box {
+  height: 110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.hero-title {
+  margin: 0;
+
+  font-size: clamp(55px, 7vw, 95px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  color: var(--text-color);
+
+  animation: simpleText 0.8s ease;
+}
+
+/* =========================================
+   SIMPLE TEXT ANIMATION
+========================================= */
+
+@keyframes simpleText {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.hero-photo {
+  position: relative;
+
+  width: 240px;
+  height: 290px;
+
+  margin-top: 15px;
+
+  overflow: hidden;
+
+  border-radius: 50% 50% 45% 45%;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  animation: photoAppear 1s ease;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.hero-photo:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 500px;
+
+  margin-top: 25px;
+
+  padding: 0 20px;
+
+  font-family: sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  opacity: 0.55;
+}
+
+/* =========================================
+   BOTTOM INFO
+========================================= */
+
+.hero-info {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+
+  font-family: sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  opacity: 0.4;
+}
+
+.hero-info span:nth-child(even) {
+  color: #8b5cf6;
+
+  opacity: 1;
+}
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+:root {
+  --bg-color: #f7f7fb;
+  --text-color: #111111;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+html[dark-theme="dark"] {
+  --bg-color: #08080c;
+  --text-color: #ffffff;
+}
+
+/* =========================================
+   DARK MODE GLOW
+========================================= */
+
+html[dark-theme="dark"] .gradient {
+  opacity: 0.18;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero-title-box {
+    height: 80px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-photo {
+    width: 190px;
+    height: 235px;
+  }
+
+  .hero-description {
+    max-width: 350px;
+
+    font-size: 12px;
+  }
+
+  .hero-info {
+    gap: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-photo {
+    width: 170px;
+    height: 215px;
+  }
+
+  .hero-info {
+    display: none;
+  }
+}
+
+/* =========================================
+   PROJECTS - LIGHT MODE
+========================================= */
+
+[dark-theme="light"] .projects-section {
+  background: #f8fafc;
+  color: #111827;
+}
+
+[dark-theme="light"] .projects-title {
+  color: #111827;
+}
+
+[dark-theme="light"] .projects-muted {
+  color: #6b7280;
+}
+
+[dark-theme="light"] .projects-description {
+  color: #6b7280;
+}
+
+[dark-theme="light"] .projects-filter {
+  background: #ffffff;
+  color: #4b5563;
+  border-color: #e5e7eb;
+}
+
+[dark-theme="light"] .project-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+[dark-theme="light"] .project-card:hover {
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.12);
+}
+
+[dark-theme="light"] .project-title {
+  color: #111827;
+}
+
+[dark-theme="light"] .project-description {
+  color: #6b7280;
+}
+
+[dark-theme="light"] .project-tech {
+  background: rgba(168, 85, 247, 0.08);
+  color: #7e22ce;
+  border-color: rgba(168, 85, 247, 0.12);
+}
+
+/* =========================================
+   PROJECTS - DARK MODE
+========================================= */
+
+[dark-theme="dark"] .projects-section {
+  background: #08080c;
+  color: #ffffff;
+}
+
+[dark-theme="dark"] .projects-title {
+  color: #ffffff;
+}
+
+[dark-theme="dark"] .projects-muted {
+  color: #9ca3af;
+}
+
+[dark-theme="dark"] .projects-description {
+  color: #9ca3af;
+}
+
+[dark-theme="dark"] .projects-filter {
+  background: rgba(255, 255, 255, 0.04);
+  color: #9ca3af;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[dark-theme="dark"] .projects-filter:hover {
+  background: rgba(168, 85, 247, 0.06);
+}
+
+[dark-theme="dark"] .project-card {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[dark-theme="dark"] .project-card:hover {
+  border-color: rgba(168, 85, 247, 0.35);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.1);
+}
+
+[dark-theme="dark"] .project-title {
+  color: #ffffff;
+}
+
+[dark-theme="dark"] .project-description {
+  color: #9ca3af;
+}
+
+[dark-theme="dark"] .project-tech {
+  background: rgba(168, 85, 247, 0.1);
+  color: #c084fc;
+  border-color: rgba(168, 85, 247, 0.12);
+}
+
+/* =========================================
+   PROJECT ANIMATION
+========================================= */
+
+@keyframes projectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
