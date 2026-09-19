@@ -72,7 +72,7 @@ export default function Navbar() {
                     onClick={closeMenu}>
                     Contact
                   </a>
-                  <div className="icons flex flex-col gap-2">
+                  <div className="icon-memu flex flex-col gap-2">
                     <a
                       className=" px-3 py-1  bg-gray-100 rounded-full flex items-center justify-center gap-2"
                       href="https://github.com/ABDDev19">

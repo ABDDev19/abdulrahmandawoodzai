@@ -37,6 +37,10 @@ html {
   --blue: #06b6d4;
   --pink: #ec4899;
 }
+.icon-memu a {
+  background-color: #111111;
+  color: white;
+}
 
 html[dark-theme="dark"] {
   /* DARK MODE */
