@@ -41,6 +41,10 @@ html {
   background-color: #111111;
   color: white;
 }
+.icon-memu button {
+  background-color: #111111;
+  color: white;
+}
 
 html[dark-theme="dark"] {
   /* DARK MODE */
